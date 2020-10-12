@@ -1,0 +1,58 @@
+<div class="content">
+  <shared-page-header
+    [title]="currentAction === 'new' ? 'Nova Lista' : 'Editar Lista'"
+    [action]="{icon: '', hidden: true}"
+  >
+  </shared-page-header>
+  <div class="row py-3 justify-content-center">
+    <div class="col col-8">
+      <form [formGroup]="resourceForm" (ngSubmit)="submitForm()">
+        <div class="card" >
+          <div class="card-body">
+            <fieldset class="mb-2 border-bottom" formGroupName="list">
+              <legend>Informações da Lista</legend>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="title">Título</label>
+                  <input type="text" class="form-control" id="title" name="title" formControlName="title">
+
+                  <shared-form-error-message [formControl]="resourceForm.get('list.title')"></shared-form-error-message>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="mt-2" formArrayName="tasks">
+              <legend>
+                Lista de Tarefas
+                <button type="button" class="btn btn-outline-primary btn-sm float-right" (click)="newTask()">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </legend>
+              <div class="form-row align-items-center" *ngFor="let task of tasks.controls, let i=index" [formGroupName]="i" [hidden]="task.get('isDeleted').value">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" [value]="true" [attr.id]="'taskIsDone' + i" [name]="'taskIsDone' + i" formControlName="isDone">
+                </div>
+                <div class="form-group col-sm-9">
+                  <label [attr.for]="'taskTitle' + i">Título</label>
+                  <input type="text" class="form-control" [attr.id]="'taskTitle' + i" [name]="'taskTitle' + i" formControlName="title">
+                </div>
+                <div class="form-group col-sm-2">
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger btn-sm mt-4"
+                    (click)="changeTaskToDelete(i)"
+                  >
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+            <button [disabled]="submittingForm || resourceForm.invalid" type="submit" class="btn float-right mt-3" [ngClass]="(submittingForm || resourceForm.invalid) ? 'btn-secondary' : 'btn-success'">
+              Salvar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

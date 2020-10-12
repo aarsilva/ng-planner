@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  background-color: #f6f6f6;
+}
+
+.g-2, .gx-2 {
+  margin-left: -.4375rem;
+  margin-right: -.4375rem;
+}
+
+.btn {
+  transition: all ease-in-out 350ms;
+}
+
+@media screen and (min-width: 992px) {
+  .content {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+  .g-lg-3, .gx-lg-3 {
+    margin-left: -.9375rem;
+    margin-right: -.9375rem;
+  }
+
+}
+

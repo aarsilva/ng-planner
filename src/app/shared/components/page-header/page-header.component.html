@@ -1,0 +1,14 @@
+<div class="page-header">
+  <div class="row align-items-center">
+    <div class="col-sm mb-2 mb-sm-0">
+      <h1 class="page-header-title">
+        {{ header.title }}
+      </h1>
+    </div>
+    <div class="col-sm-auto" [hidden]="header.action.hidden">
+      <a class="btn btn-primary" [routerLink]="header.action.link">
+        <i [ngClass]="[header.action.icon, 'mr-1']"></i> {{ header.action.text }}
+      </a>
+    </div>
+  </div>
+</div>

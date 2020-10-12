@@ -1,0 +1,26 @@
+<div class="card shadow-sm rounded">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+      {{ data.title }}
+    </h6>
+    <p class="card-text my-0">
+      {{ taskQuantity }} tarefas cadastradas
+    </p>
+  </div>
+  <div class="card-footer text-right">
+    <a
+      [routerLink]="'/lists/edit/' + data.id"
+      class="btn btn-outline-warning btn-sm mr-1"
+    >
+      <i class="fa fa-edit"></i>
+    </a>
+    <button
+      type="button"
+      class="btn btn-outline-danger btn-sm mr-1"
+      [disabled]="submittingForm"
+      (click)="deleteList(data.id)"
+    >
+      <i class="fas fa-trash-alt"></i>
+    </button>
+  </div>
+</div>

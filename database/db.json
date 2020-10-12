@@ -1,0 +1,52 @@
+{
+  "lists": [
+    {
+      "id": 1,
+      "title": "Mercado"
+    },
+    {
+      "id": 3,
+      "title": "Teste TOTVS"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "listId": 1,
+      "title": "Comprar arroz"
+    },
+    {
+      "id": 2,
+      "listId": 1,
+      "title": "Comprar feijão"
+    },
+    {
+      "id": 5,
+      "listId": 3,
+      "title": "Fazer CRUD de Listas",
+      "isDone": true,
+      "isDeleted": false
+    },
+    {
+      "id": 6,
+      "listId": 3,
+      "title": "Fazer CRUD de Tarefas",
+      "isDone": true,
+      "isDeleted": false
+    },
+    {
+      "id": 7,
+      "listId": 3,
+      "title": "Excluir Tarefas",
+      "isDone": false,
+      "isDeleted": false
+    },
+    {
+      "id": 8,
+      "listId": 3,
+      "title": "Excluir Listas",
+      "isDone": true,
+      "isDeleted": false
+    }
+  ]
+}
