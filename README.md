@@ -12,6 +12,7 @@ Para se executar o projeto, algumas dependências são necessárias em sua máqu
 
 ## Para executar o projeto
 
-Dentro do projeto, na pasta database, execute o comando `json-server --delay 500 db.json` para iniciar o banco de dados.
+Abra o terminal na pasta raiz do projeto. Após isto, execute o comando `npm install` para instalar todas as dependencias locais do projeto.
+Abra um segundo terminal na pasta database e execute o comando `json-server --delay 500 db.json` para iniciar o banco de dados.
 Na pasta raíz, execute o comando `ng serve` ou `npm run start` para iniciar o servidor de desenvolvimento. 
 Abra no navegador o [NG Planner](http://localhost:4200/).
